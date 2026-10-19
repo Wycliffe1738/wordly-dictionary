@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover definitions, pronunciation and synonyms with Wordly Dictionary.">
+    <title>Wordly | Smart Dictionary</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <a class="logo" href="#" aria-label="Wordly home">Wordly<span>.</span></a>
+        <button id="theme-toggle" type="button" aria-label="Switch to dark theme">
+            🌙 Dark mode
+        </button>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <p class="eyebrow">YOUR PERSONAL VOCABULARY COMPANION</p>
+            <h1>Discover the meaning <span>of every word.</span></h1>
+            <p class="subtitle">
+                Search, learn, listen, and build your vocabulary one word at a time.
+            </p>
+
+            <form id="search-form">
+                <label class="sr-only" for="word-input">Enter a word</label>
+                <input
+                    id="word-input"
+                    type="search"
+                    placeholder="Enter a word, e.g. beautiful"
+                    autocomplete="off"
+                    required
+                >
+                <button id="search-button" type="submit">Search</button>
+            </form>
+
+            <p class="suggestions">
+                Try:
+                <button class="suggestion" type="button" data-word="eloquent">eloquent</button>
+                <button class="suggestion" type="button" data-word="resilient">resilient</button>
+                <button class="suggestion" type="button" data-word="serendipity">serendipity</button>
+            </p>
+        </section>
+
+        <p id="status" role="status" aria-live="polite"></p>
+
+        <section id="results" aria-label="Dictionary results" hidden>
+            <article class="word-card">
+                <div class="word-heading">
+                    <div>
+                        <h2 id="result-word"></h2>
+                        <p id="phonetic"></p>
+                    </div>
+                    <button id="audio-button" type="button" hidden>
+                        🔊 Listen
+                    </button>
+                </div>
+
+                <button id="favorite-button" class="favorite-button" type="button">
+                    ♡ Save to favorites
+                </button>
+
+                <div id="meanings"></div>
+
+                <p class="source">
+                    Source:
+                    <a href="https://dictionaryapi.dev/"
+                       target="_blank" rel="noopener noreferrer">
+                        Free Dictionary API
+                    </a>
+                </p>
+            </article>
+        </section>
+
+        <section class="favorites-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR COLLECTION</p>
+                    <h2>Favorite words</h2>
+                </div>
+                <span id="favorite-count">0 saved</span>
+            </div>
+            <p id="empty-favorites">Your saved words will appear here.</p>
+            <ul id="favorites-list"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Wordly Dictionary · Learn a new word every day.</p>
+    </footer>
+</body>
+</html>
